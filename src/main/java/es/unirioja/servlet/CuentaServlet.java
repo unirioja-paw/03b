@@ -24,6 +24,7 @@ public class CuentaServlet extends HttpServlet {
         }
     }
 
+    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         List<Articulo> articulos = gbd.getArticulos();

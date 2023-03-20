@@ -1,0 +1,7 @@
+es/unirioja/paw/model/Articulo.class
+es/unirioja/servlet/CuentaServlet.class
+es/unirioja/servlet/CuidadoCicloVidaServlet.class
+es/unirioja/paw/model/Persona.class
+es/unirioja/db/GestorBDMock.class
+es/unirioja/servlet/InitLoopServlet.class
+es/unirioja/db/GestorBD.class
