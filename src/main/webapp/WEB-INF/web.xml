@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    
+    <!-- HelloServlet -->
+    <servlet>
+        <servlet-name>greeting</servlet-name>
+        <servlet-class>es.unirioja.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>greeting</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    
+    <!-- cuidado -->
     <servlet>
         <servlet-name>cuidado</servlet-name>
         <servlet-class>es.unirioja.servlet.CuidadoCicloVidaServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>cuenta</servlet-name>
-        <servlet-class>es.unirioja.servlet.CuentaServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>cuidado</servlet-name>
         <url-pattern>/cuidado</url-pattern>
     </servlet-mapping>
+    
+    <!-- cuenta -->
+    <servlet>
+        <servlet-name>cuenta</servlet-name>
+        <servlet-class>es.unirioja.servlet.CuentaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cuenta</servlet-name>
+        <url-pattern>/cuenta</url-pattern>
+    </servlet-mapping>
+    
+    <!-- initLoop -->
     <servlet>
         <servlet-name>initLoop</servlet-name>
         <servlet-class>es.unirioja.servlet.InitLoopServlet</servlet-class>
@@ -20,10 +41,60 @@
         <servlet-name>initLoop</servlet-name>
         <url-pattern>/loop</url-pattern>
     </servlet-mapping>
+    
+    <!-- ProcessRequestServlet -->
+    <servlet>
+        <servlet-name>processRequest</servlet-name>
+        <servlet-class>es.unirioja.servlet.ProcessRequestServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>cuenta</servlet-name>
-        <url-pattern>/cuenta</url-pattern>
+        <servlet-name>processRequest</servlet-name>
+        <url-pattern>/processRequest</url-pattern>
     </servlet-mapping>
+    
+    <!-- UpdateArticuloServlet -->
+    <servlet>
+        <servlet-name>updateArticulo</servlet-name>
+        <servlet-class>es.unirioja.servlet.UpdateArticuloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateArticulo</servlet-name>
+        <url-pattern>/articulo</url-pattern>
+    </servlet-mapping>
+    
+        
+    <!-- SendErrorServlet -->
+    <servlet>
+        <servlet-name>sendError</servlet-name>
+        <servlet-class>es.unirioja.servlet.SendErrorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sendError</servlet-name>
+        <url-pattern>/send-error</url-pattern>
+    </servlet-mapping>
+    
+    <!-- ForwardServlet -->
+    <servlet>
+        <servlet-name>forwardServlet</servlet-name>
+        <servlet-class>es.unirioja.servlet.ForwardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>forwardServlet</servlet-name>
+        <url-pattern>/hi</url-pattern>
+    </servlet-mapping>
+    
+    <!-- FichaArticuloServlet -->
+    <servlet>
+        <servlet-name>fichaArticulo</servlet-name>
+        <servlet-class>es.unirioja.servlet.FichaArticuloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fichaArticulo</servlet-name>
+        <url-pattern>/ficha</url-pattern>
+    </servlet-mapping>
+    
+    
+
     <session-config>
         <session-timeout>
             30

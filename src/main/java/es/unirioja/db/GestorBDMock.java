@@ -2,6 +2,7 @@ package es.unirioja.db;
 
 import com.github.javafaker.Faker;
 import es.unirioja.paw.model.Articulo;
+import es.unirioja.paw.model.ExcepcionDeAplicacion;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -23,12 +24,12 @@ public class GestorBDMock implements GestorBD {
         return a;
     }
 
-    public Articulo getArticulo(String id) {
+    public Articulo getArticulo(String id) throws ExcepcionDeAplicacion {
         return mockArticulo(id);
     }
 
     @Override
-    public List<Articulo> getArticulos() {
+    public List<Articulo> getArticulos() throws ExcepcionDeAplicacion {
         List<Articulo> result = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             result.add(mockArticulo(i));

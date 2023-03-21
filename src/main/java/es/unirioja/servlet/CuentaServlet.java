@@ -3,9 +3,12 @@ package es.unirioja.servlet;
 import es.unirioja.db.GestorBD;
 import es.unirioja.db.GestorBDMock;
 import es.unirioja.paw.model.Articulo;
+import es.unirioja.paw.model.ExcepcionDeAplicacion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,9 +27,15 @@ public class CuentaServlet extends HttpServlet {
         }
     }
 
-    public void doGet(HttpServletRequest req, HttpServletResponse res)
+    protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
-        List<Articulo> articulos = gbd.getArticulos();
+        List<Articulo> articulos;
+        try {
+            articulos = gbd.getArticulos();
+        } catch (ExcepcionDeAplicacion ex) {
+            Logger.getLogger(CuentaServlet.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }
 
         PrintWriter out = res.getWriter();
         if (articulos == null || articulos.isEmpty()) {
