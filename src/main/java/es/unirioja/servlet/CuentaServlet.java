@@ -27,7 +27,10 @@ public class CuentaServlet extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse res)
+
+    @Override
+   protected void doGet(HttpServletRequest req, HttpServletResponse res)
+
             throws ServletException, IOException {
         List<Articulo> articulos;
         try {
