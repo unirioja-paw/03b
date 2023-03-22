@@ -13,8 +13,8 @@ public class ForwardServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-//        RequestDispatcher rd = request.getRequestDispatcher("/greeting.jsp");
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/pages/greeting-inside.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/greeting.jsp");
+//        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/pages/greeting-inside.jsp");
         rd.forward(request, response);
     }
 
