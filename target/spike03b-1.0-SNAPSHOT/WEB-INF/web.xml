@@ -93,7 +93,114 @@
         <url-pattern>/ficha</url-pattern>
     </servlet-mapping>
     
+ 
+    <!-- RandomImageServlet -->
+    <servlet>
+        <servlet-name>randomImageServlet</servlet-name>
+        <servlet-class>es.unirioja.servlet.RandomImageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>randomImageServlet</servlet-name>
+        <url-pattern>/randomImage</url-pattern>
+    </servlet-mapping>    
+ 
+    <!-- RutaServlet-->
+    <servlet>
+        <servlet-name>ruta</servlet-name>
+        <servlet-class>es.unirioja.servlet.RutaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ruta</servlet-name>
+        <url-pattern>/ruta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ruta</servlet-name>
+        <url-pattern>/watch/*</url-pattern>
+    </servlet-mapping>
     
+    <!--  InitParameterServlet -->
+    <servlet>
+        <servlet-name>version</servlet-name>
+        <servlet-class>es.unirioja.servlet.InitParameterServlet</servlet-class>
+        <init-param>
+            <description>Version del servlet</description>
+            <param-name>version</param-name>
+            <param-value>2.3.1 (web.xml: init-param)</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>version</servlet-name>
+        <url-pattern>/version</url-pattern>
+    </servlet-mapping>
+    
+    <!-- usado en application.jsp -->
+    <context-param>
+        <param-name>version</param-name>
+        <param-value>1.0 (web.xml: context-param)</param-value>
+    </context-param>
+ 
+ 
+    <!-- LoginServlet -->
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>es.unirioja.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>    
+ 
+    <!-- OutputBufferServlet -->
+    <servlet>
+        <servlet-name>outputBufferServlet</servlet-name>
+        <servlet-class>es.unirioja.servlet.OutputBufferServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>outputBufferServlet</servlet-name>
+        <url-pattern>/outputBuffer</url-pattern>
+    </servlet-mapping>    
+    
+    <!-- ManejoErroresServlet -->
+    <servlet>
+        <servlet-name>manejoErroresServlet</servlet-name>
+        <servlet-class>es.unirioja.servlet.ManejoErroresServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manejoErroresServlet</servlet-name>
+        <url-pattern>/manejoErrores</url-pattern>
+    </servlet-mapping>    
+    
+    <!-- Error404Servlet -->
+    <servlet>
+        <servlet-name>error404Servlet</servlet-name>
+        <servlet-class>es.unirioja.servlet.Error404Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>error404Servlet</servlet-name>
+        <url-pattern>/fuera-plazo</url-pattern>
+    </servlet-mapping>    
+    
+    
+    
+    <!-- SqlInjectionServlet -->
+    <servlet>
+        <servlet-name>sqlInjectionServlet</servlet-name>
+        <servlet-class>es.unirioja.servlet.SqlInjectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sqlInjectionServlet</servlet-name>
+        <url-pattern>/sql</url-pattern>
+    </servlet-mapping>    
+    
+    <error-page>
+        <exception-type>es.unirioja.paw.model.ExcepcionDeAplicacion</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.jsp</location>
+    </error-page>
 
     <session-config>
         <session-timeout>

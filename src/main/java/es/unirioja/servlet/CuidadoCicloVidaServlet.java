@@ -41,7 +41,7 @@ public class CuidadoCicloVidaServlet extends HttpServlet {
     private void updateEdad(HttpServletRequest req) {
         edad = Integer.valueOf(req.getParameter("edad"));
         sleepRandomTime();
-        if (req.getParameter("edad") == null || req.getParameter("edad").isBlank()) {
+        if (req.getParameter("edad") == null || req.getParameter("edad").isEmpty()) {
             System.out.println("edad null or empty");
             return;
         }
