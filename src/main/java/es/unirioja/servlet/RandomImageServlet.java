@@ -21,8 +21,8 @@ public class RandomImageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        PrintWriter outPrintWriter = response.getWriter();
-//        outPrintWriter.println("This is a GET");
+        PrintWriter outPrintWriter = response.getWriter();
+        outPrintWriter.println("This is a GET");
 
         response.setContentType("image/jpg");
         OutputStream out = response.getOutputStream();

@@ -18,8 +18,8 @@ public class UpdateArticuloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("application/json");
-//        response.setContentType("application/json; charset=UTF-8");
+//        response.setContentType("application/json");
+        response.setContentType("application/json; charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.println(buildJsonResponse());
     }
@@ -44,8 +44,8 @@ public class UpdateArticuloServlet extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.setContentType("application/json");
-//        response.setContentType("application/json; charset=UTF-8");
+//        response.setContentType("application/json");
+        response.setContentType("application/json; charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.println(buildJsonResponse());
     }
