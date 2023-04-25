@@ -9,5 +9,13 @@
         <h1>Hola mundo!</h1>
         <p>Saludos</p>
         <p>Página dentro de WEB-INF</p>
+
+        <p>
+            productId=<%=request.getParameter("productId")%>
+        </p>
+        <p>
+            productId=${param.productId}
+        </p>
+
     </body>
 </html>
