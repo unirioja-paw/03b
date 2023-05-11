@@ -1,7 +1,6 @@
 package es.unirioja.servlet;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +14,13 @@ public class InitParameterServlet extends HttpServlet {
             HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-        String versionId = getInitParameter("version");
+        String versionId_initParam = getInitParameter("version");
+        String versionId_contextParam = request.getServletContext().getInitParameter("version");
+
         PrintWriter out = response.getWriter();
         response.setContentType("text/plain");
-        out.println("Servlet version: " + versionId);
+        out.println("Version (init-param): " + versionId_initParam);
+        out.println("Version (context-param): " + versionId_contextParam);
     }
 
 }
